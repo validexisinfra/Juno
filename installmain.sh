@@ -17,7 +17,7 @@ print_error() {
 read -p "Enter your node MONIKER: " MONIKER
 read -p "Enter your custom port prefix (e.g. 16): " CUSTOM_PORT
 
-print "Installing Agoric Node with moniker: $MONIKER"
+print "Installing Juno Node with moniker: $MONIKER"
 print "Using custom port prefix: $CUSTOM_PORT"
 
 print "Updating system and installing dependencies..."
@@ -38,9 +38,9 @@ cd juno
 git checkout v28.0.2
 make install
 
-junod config chain-id juno-1
-junod config keyring-backend file
-junod config node tcp://localhost:${CUSTOM_PORT}657
+junod config set client chain-id juno-1
+junod config set client keyring-backend file
+junod config set client node tcp://localhost:${CUSTOM_PORT}657
 junod init $MONIKER --chain-id=juno-1
 
 wget -L -O $HOME/.juno/config/genesis.json https://server-1.stavr.tech/Mainnet/Juno/genesis.json
