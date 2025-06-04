@@ -35,7 +35,7 @@ cd $HOME
 rm -rf juno
 git clone https://github.com/CosmosContracts/juno juno
 cd juno
-git checkout v28.0.2
+git checkout v29.0.0
 make install
 
 junod config set client chain-id juno-1
