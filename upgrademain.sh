@@ -1,6 +1,6 @@
 #!/bin/bash
 cd $HOME/juno
-git fetch --tags && git checkout v28.0.2
+git fetch --tags && git checkout v29.0.0
 make install
 junod version
 ​
